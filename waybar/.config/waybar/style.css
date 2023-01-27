@@ -31,6 +31,10 @@ window#waybar {
 	background: #1a1a1a;
 }
 
+#tray {
+  padding: 0 10px;
+}
+
 #workspaces button {
 	padding: 0 2px;
 	color: #fdf6e3;
