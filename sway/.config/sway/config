@@ -22,9 +22,9 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec --
 set $grid nwggrid
 
 ### Output configuration
-#
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+
+set $wallpapers_path $HOME/Pictures/Wallpapers
+output * bg `find $wallpapers_path -type f | shuf -n 1` fill
 
 default_border none
 default_floating_border none
@@ -88,7 +88,8 @@ default_floating_border none
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    #bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+e exec nwgbar
 #
 # Moving around:
 #
@@ -202,6 +203,9 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+bindsym $mod+Control+Shift+$right move workspace to output right
+bindsym $mod+Control+Shift+$left move workspace to output left
+
 #
 # Status Bar:
 #
@@ -211,5 +215,10 @@ bar {
 }
 
 exec /usr/share/sway/scripts/inactive-windows-transparency.py --opacity 0.85
+exec blueman-applet
+
+for_window [class="1Password"] floating enable
+for_window [app_id="blueman-manager"] floating enable
+for_window [app_id="pavucontrol"] floating enable
 
 include /etc/sway/config.d/*

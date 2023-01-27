@@ -1,6 +1,6 @@
 * {
-	font-size: 12px;
-	font-family: Source Code Pro for Powerline;
+	font-size: 14px;
+	font-family: "Source Code Pro for Powerline", "Font Awesome 6 Free";
 }
 
 window#waybar {
@@ -11,17 +11,17 @@ window#waybar {
 #custom-right-arrow-dark,
 #custom-left-arrow-dark {
 	color: #1a1a1a;
+  font-size: 18px;
 }
 #custom-right-arrow-light,
 #custom-left-arrow-light {
 	color: #292b2e;
 	background: #1a1a1a;
+  font-size: 18px;
 }
 
 #workspaces,
-#clock.1,
-#clock.2,
-#clock.3,
+#clock,
 #pulseaudio,
 #memory,
 #cpu,
