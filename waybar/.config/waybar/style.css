@@ -11,13 +11,13 @@ window#waybar {
 #custom-right-arrow-dark,
 #custom-left-arrow-dark {
 	color: #1a1a1a;
-  font-size: 18px;
+  font-size: 20px;
 }
 #custom-right-arrow-light,
 #custom-left-arrow-light {
 	color: #292b2e;
 	background: #1a1a1a;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 #workspaces,
@@ -29,6 +29,10 @@ window#waybar {
 #disk,
 #tray {
 	background: #1a1a1a;
+}
+
+#custom-notification {
+  margin-right: 10px;
 }
 
 #tray {
