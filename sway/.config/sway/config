@@ -210,17 +210,18 @@ bindsym $mod+Control+Shift+$left move workspace to output left
 # 1password
 bindsym Control+Shift+x exec 1password
 
-# capture all screens to clipboard    
-bindsym Print exec grim - | wl-copy    
+# capture the specified screen area to screenshots folder
+bindsym Print exec grim -g "$(slurp)" $HOME/Pictures/Screenshots/$(date +'%y-%m-%d-%H-%S.png')
 
-# capture the specified screen area to clipboard    
-bindsym Shift+Print exec grim -g "$(slurp)" - | wl-copy    
+bindsym Shift+Print exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') $HOME/Pictures/Screenshots/$(date +'%y-%m-%d-%H-%S.png')
 
-# capture the focused monitor to clipboard    
-bindsym Shift+Control+Print exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') - | wl-copy
+bindsym Ctrl+Shift+Print exec grim -g "$(slurp)" - | wl-copy    
 
 # open swaync notification center
-bindsym $mod+grave exec swaync-client -t
+bindsym $mod+Shift+grave exec swaync-client -t
+
+# back to last workspace
+bindsym $mod+grave workspace back_and_forth
 
 #
 # Status Bar:
