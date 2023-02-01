@@ -1,5 +1,5 @@
 {
-  "layer": "top",
+  "layer": "bottom",
   "position": "top",
   "modules-left": [
     "sway/workspaces",
@@ -85,7 +85,9 @@
   },
   "cpu": {
     "interval": 5,
-    "format": " {usage:2}%"
+    "format": " {usage:2}%",
+    "on-click": "alacritty -e htop",
+    "on-click-right": "alacritty -e glances"
   },
   "battery": {
     "states": {
@@ -109,7 +111,7 @@
   },
   "tray": {
     "icon-size": 14,
-    "spacing": 5
+    "spacing": 8
   },
   "custom/notification": {
     "tooltip": false,

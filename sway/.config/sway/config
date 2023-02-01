@@ -5,19 +5,12 @@
 # Read `man 5 sway` for a complete reference.
 
 ### Variables
-#
-# Logo key. Use Mod1 for Alt.
 set $mod Mod4
-# Home row direction keys, like vim
 set $left h
 set $down j
 set $up k
 set $right l
-# Your preferred terminal emulator
 set $term alacritty
-# Your preferred application launcher
-# Note: pass the final command to swaymsg so that the resulting window can be opened
-# on the original workspace that the command was run on.
 set $menu dmenu_path | dmenu | xargs swaymsg exec --
 set $grid nwggrid
 
@@ -40,10 +33,10 @@ default_floating_border none
 #
 # Example configuration:
 #
-exec swayidle -w \
-         timeout 300 'swaylock -f -c 000000' \
-         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-         before-sleep 'swaylock -f -c 000000'
+#exec swayidle -w \
+#         timeout 300 'swaylock -f -c 000000' \
+#         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+#         before-sleep 'swaylock -f -c 000000'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
