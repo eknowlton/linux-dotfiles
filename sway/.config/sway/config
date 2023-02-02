@@ -20,7 +20,7 @@ set $wallpapers_path $HOME/Pictures/Wallpapers
 output * bg `find $wallpapers_path -type f | shuf -n 1` fill
 
 default_border none
-default_floating_border none
+default_floating_border normal
 
 #
 # Example configuration:
@@ -246,5 +246,6 @@ for_window [app_id="blueman-manager"] floating enable
 for_window [app_id="pavucontrol"] floating enable
 for_window [app_id="nm-connection-editor"] floating enable
 for_window [app_id="seahorse"] floating enable
+for_window [app_id="Thunar"] floating enable
 
 include /etc/sway/config.d/*
