@@ -3,6 +3,7 @@
   "position": "top",
   "modules-left": [
     "sway/workspaces",
+    "custom/scratchpad-indicator",
     "custom/right-arrow-dark"
   ],
   "modules-center": [
@@ -13,6 +14,8 @@
   "modules-right": [
     "custom/notification",
     "custom/left-arrow-dark",
+    "temperature",
+    "backlight",
     "pulseaudio",
     "memory",
     "cpu",
@@ -128,5 +131,26 @@
     "on-click-right": "swaync-client -t -sw",
     "on-click": "swaync-client -d -sw",
     "escape": true
-  }
+  },
+  "backlight": {
+    "device": "intel_backlight",
+    "format": " {percent}%",
+    "on-scroll-up": "brightnessctl s 25+",
+    "on-scroll-down": "brightnessctl s 25-"
+  },
+  "temperature": {
+    "thermal-zone": 2,
+    "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+    "critical-threshold": 80,
+    "format-critical": " {temperatureC}°C",
+    "format": " {temperatureC}°C"
+  },
+  "custom/scratchpad-indicator": {
+    "interval": 3,
+    "return-type": "json",
+    "exec": "swaymsg -t get_tree | jq --unbuffered --compact-output '(select(.name == \"root\") | .nodes[] | select(.name == \"__i3\") | .nodes[] | select(.name == \"__i3_scratch\") | .focus) as $scratch_ids | [.. | (.nodes? + .floating_nodes?) // empty | .[] | select(.id|IN($scratch_ids[]))] as $scratch_nodes | { text: \"\\($scratch_nodes|length)\", tooltip: $scratch_nodes|map(.name)|join(\"\\n\") }'",
+    "format": " {}",
+    "on-click": "swaymsg 'scratchpad show'",
+    "on-click-right": "swaymsg 'move scratchpad'"
+}
 }
