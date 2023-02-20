@@ -15,9 +15,9 @@
     "icon": "system-reboot"
   },
   {
-    "name": "Hibernate",
-    "exec": "systemctl hybrid-sleep",
-    "icon": "system-hibernate"
+    "name": "Suspend",
+    "exec": "systemctl suspend",
+    "icon": "system-suspend"
   },
   {
     "name": "Shutdown",
