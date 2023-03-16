@@ -27,12 +27,7 @@
   "hide-on-action": true,
   "script-fail-notify": true,
 
-  "widgets": [
-    "title",
-    "dnd",
-    "mpris",
-    "notifications"
-  ],
+  "widgets": ["title", "dnd", "mpris", "notifications"],
   "widget-config": {
     "title": {
       "text": "Notifications",
@@ -49,6 +44,13 @@
     "mpris": {
       "image-size": 96,
       "image-radius": 12
+    }
+  },
+
+  "scripts": {
+    "mute-thunderbird-notifications": {
+      "exec": "echo 'Command has run' > /home/ethan/has-run",
+      "app-name": "Thunderbird"
     }
   }
 }
