@@ -20,6 +20,7 @@ Plug 'KabbAmine/vCoolor.vim'
 Plug 'janko-m/vim-test'
 Plug 'LnL7/vim-nix'
 Plug 'tpope/vim-fugitive'
+Plug 'jparise/vim-graphql'
 
 call plug#end()
 
@@ -102,6 +103,10 @@ let g:which_key_map.r = ['Ranger', 'Ranger File Browser']
 let g:which_key_map.f = { 'name' : 'Files',
                \ 'f' : ['Files', 'Find Files FZF'],
                \ 'g' : ['GFiles', 'Find GIT Files FZF'],
+               \ }
+
+let g:which_key_map.b = { 'name' : 'Buffer',
+               \ 'd' : ['bd', 'Close buffer'],
                \ }
 
 "----- Fugitive ( Git ) 
