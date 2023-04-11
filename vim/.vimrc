@@ -1,3 +1,9 @@
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin()
 
 Plug 'tpope/vim-sensible'
@@ -21,6 +27,7 @@ Plug 'janko-m/vim-test'
 Plug 'LnL7/vim-nix'
 Plug 'tpope/vim-fugitive'
 Plug 'jparise/vim-graphql'
+Plug 'pearofducks/ansible-vim'
 
 call plug#end()
 

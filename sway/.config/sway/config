@@ -237,6 +237,7 @@ exec blueman-applet
 exec swaync
 exec udiskie --appindicator -t
 exec nm-applet --indicator
+exec emote
 
 # Allow switching between workspaces with left and right swipes
 bindgesture swipe:right workspace prev
