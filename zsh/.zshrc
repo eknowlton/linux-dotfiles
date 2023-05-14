@@ -69,11 +69,13 @@ ZSH_THEME="watertowndev"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf git-truncate)
+plugins=(git fzf git-truncate kube-ps1 aws)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+
+PROMPT=$PROMPT'$(kube_ps1) ' 
 
 # export MANPATH="/usr/local/man:$MANPATH"
 

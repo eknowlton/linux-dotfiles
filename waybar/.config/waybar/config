@@ -70,7 +70,7 @@
 
   "pulseaudio": {
     "format": "{icon} {volume:2}%",
-    "format-bluetooth": "{icon}  {volume}%",
+    "format-bluetooth": " {icon}  {volume}%",
     "format-muted": "MUTE",
     "format-icons": {
       "headphones": "",
@@ -89,7 +89,7 @@
   "cpu": {
     "interval": 5,
     "format": " {usage:2}%",
-    "on-click": "alacritty -e htop",
+    "on-click": "alacritty -e btop",
     "on-click-right": "alacritty -e glances"
   },
   "battery": {

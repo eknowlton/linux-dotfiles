@@ -18,7 +18,6 @@ Plug 'liuchengxu/vim-which-key'
 Plug 'ruanyl/vim-gh-line'
 Plug 'hashivim/vim-terraform'
 Plug 'jasonccox/vim-wayland-clipboard'
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'gko/vim-coloresque'
@@ -28,6 +27,7 @@ Plug 'LnL7/vim-nix'
 Plug 'tpope/vim-fugitive'
 Plug 'jparise/vim-graphql'
 Plug 'pearofducks/ansible-vim'
+Plug 'tpope/vim-rhubarb'
 
 call plug#end()
 
@@ -69,6 +69,7 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
 
 autocmd BufEnter *.tsx set filetype=typescript.tsx
 autocmd BufEnter *.jsx set filetype=javascript.jsx
+autocmd BufEnter *.sls set filetype=yaml
 
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 
@@ -99,6 +100,15 @@ endfunction
 inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
 inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
 
+let g:coc_global_extensions =
+  \[
+  \  '@yaegassy/coc-intelephense',
+  \  'coc-flutter',
+  \  'coc-go',
+  \  'coc-prettier',
+  \  'coc-tsserver'
+  \]
+
 "----- Buffers
 let g:which_key_map.b = { 'name' : 'Buffers',
                \ 'n' : ['BufferNext', 'Next Buffer'],
@@ -121,6 +131,11 @@ let g:which_key_map.g = { 'name' : 'Fugitive',
                \ 'g' : ['Git', 'Call a git command'],
                \ 'b' : ['Git blame', 'Blame'],
                \ 'd' : ['Git diff', 'Git Diff'],
+               \ 'l' : ['Git log', 'Git log'],
+               \ 'm' : ['Git mergetool', 'Git mergetool'],
+               \ 'D' : ['Git difftool', 'Git difftool'],
+               \ 'c' : ['Git commit', 'Git commit'],
+               \ 'B' : ['GBrowse', 'Open in browser'],
                \ }
 
 let g:which_key_map.w = { 'name' : 'Windows',
