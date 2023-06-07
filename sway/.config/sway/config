@@ -207,7 +207,7 @@ bindsym Control+Shift+x exec 1password
 bindsym Print exec grim -g "$(slurp)" - | wl-copy    
 
 # capture the specified screen area to screenshots folder
-bindsym Ctrl+Shift+Print exec grim -g "$(slurp)" $HOME/Pictures/Screenshots/$(date +'%y-%m-%d-%H-%S.png')
+bindsym $mod+Shift+Print exec grim -g "$(slurp)" $HOME/Pictures/Screenshots/$(date +'%y-%m-%d-%H-%S.png')
 
 # capture focused monitor and save to screenshots folder
 bindsym Shift+Print exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') $HOME/Pictures/Screenshots/$(date +'%y-%m-%d-%H-%S.png')
@@ -237,7 +237,7 @@ exec blueman-applet
 exec swaync
 exec udiskie --appindicator -t
 exec nm-applet --indicator
-exec emote
+#exec opensnitch-ui
 
 # Allow switching between workspaces with left and right swipes
 bindgesture swipe:right workspace prev
@@ -257,5 +257,9 @@ for_window [app_id="seahorse"] floating enable
 for_window [app_id="Thunar"] floating enable
 for_window [app_id="wdisplays"] floating enable
 for_window [app_id="udiskie"] floating enable
+for_window [app_id="opensnitch_ui"] floating enable
+for_window [app_id="org.inkscape.Inkscape"] floating enable
+for_window [class="Maltego"] floating enable
+
 
 include /etc/sway/config.d/*

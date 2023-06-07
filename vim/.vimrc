@@ -28,13 +28,12 @@ Plug 'tpope/vim-fugitive'
 Plug 'jparise/vim-graphql'
 Plug 'pearofducks/ansible-vim'
 Plug 'tpope/vim-rhubarb'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
 call plug#end()
 
 set exrc
 set secure
-
-let g:mkdp_auto_start = 1
 
 colorscheme monokai
 
@@ -159,10 +158,16 @@ let g:which_key_map.t = { 'name' : 'Testing',
                \ 'v' : ['TestVisit', 'Visit Last'],
                \ }
 
+let g:which_key_map.m = { 'name' : 'Markdown',
+               \ 'p' : ['MarkdownPreviewToggle', 'Toggle MD Preview'],
+               \ }
+
 call which_key#register('<Space>', "g:which_key_map")
 
 nnoremap <silent> <leader> :<c-u>WhichKey '<Space>'<CR>
 vnoremap <silent> <localleader> :<c-u>WhichKeyVisual ','<CR>
+
+nnoremap <silent> gd :call CocActionAsync('jumpDefinition')<CR>
 
 let test#strategy = "shtuff"
 let g:shtuff_receiver = 'devrunner'
