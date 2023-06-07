@@ -119,6 +119,7 @@ let g:which_key_map.r = ['Ranger', 'Ranger File Browser']
 let g:which_key_map.f = { 'name' : 'Files',
                \ 'f' : ['Files', 'Find Files FZF'],
                \ 'g' : ['GFiles', 'Find GIT Files FZF'],
+               \ 'G' : ['GFiles?', 'Find GIT Files FZF with Changes'],
                \ }
 
 let g:which_key_map.b = { 'name' : 'Buffer',
@@ -135,6 +136,8 @@ let g:which_key_map.g = { 'name' : 'Fugitive',
                \ 'D' : ['Git difftool', 'Git difftool'],
                \ 'c' : ['Git commit', 'Git commit'],
                \ 'B' : ['GBrowse', 'Open in browser'],
+               \ 'C' : ['Commits', 'FZF Commits'],
+               \ 'a' : ['BCommits', 'FZF Current Buffer Commits'],
                \ }
 
 let g:which_key_map.w = { 'name' : 'Windows',
@@ -161,6 +164,15 @@ let g:which_key_map.t = { 'name' : 'Testing',
 let g:which_key_map.m = { 'name' : 'Markdown',
                \ 'p' : ['MarkdownPreviewToggle', 'Toggle MD Preview'],
                \ }
+
+let g:which_key_map.z = { 'name': 'FZF Fun',
+               \ 'b' : [ 'Buffers', "Open Buffers" ],
+               \ 'l' : [ 'BLines', "Current Buffer Lines" ],
+               \ 'L' : [ 'Lines', "All Buffer Lines" ],
+               \ }
+
+nnoremap <silent> zh :History:<CR>
+nnoremap <silent> zH :History/<CR>
 
 call which_key#register('<Space>', "g:which_key_map")
 
