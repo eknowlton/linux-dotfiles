@@ -260,6 +260,8 @@ for_window [app_id="udiskie"] floating enable
 for_window [app_id="opensnitch_ui"] floating enable
 for_window [app_id="org.inkscape.Inkscape"] floating enable
 for_window [class="Maltego"] floating enable
+for_window [instance="Devtools" class="firefox"] floating enable
+for_window [app_id="thunar"] floating enable
 
 
 include /etc/sway/config.d/*

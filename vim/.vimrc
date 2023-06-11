@@ -29,6 +29,7 @@ Plug 'jparise/vim-graphql'
 Plug 'pearofducks/ansible-vim'
 Plug 'tpope/vim-rhubarb'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'peitalin/vim-jsx-typescript'
 
 call plug#end()
 
@@ -66,8 +67,8 @@ autocmd FileType xml setlocal ts=2 sts=2 sw=2
 autocmd FileType css setlocal ts=2 sts=2 sw=2
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
-autocmd BufEnter *.tsx set filetype=typescript.tsx
-autocmd BufEnter *.jsx set filetype=javascript.jsx
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
+
 autocmd BufEnter *.sls set filetype=yaml
 
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
