@@ -80,7 +80,8 @@
       ]
     },
     "scroll-step": 1,
-    "on-click": "pavucontrol"
+    "on-click": "pavucontrol",
+    "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
   },
   "memory": {
     "interval": 5,

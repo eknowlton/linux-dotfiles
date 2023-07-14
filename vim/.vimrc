@@ -143,6 +143,8 @@ let g:which_key_map.g = { 'name' : 'Fugitive',
 
 let g:which_key_map.w = { 'name' : 'Windows',
 	       \ 'd' : ['close', 'Close Window'],
+	       \ 'n' : ['bnext', 'Next Buffer'],
+	       \ 'p' : ['bprevious', 'Previous Buffer'],
 	       \ 's' : ['split', 'Horizontal Split'],
 	       \ 'v' : ['vsplit', 'Vertical Split'],
 	       \ 'h' : ['<C-W>h', 'Move Left'],
