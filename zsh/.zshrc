@@ -115,3 +115,7 @@ eval "$(direnv hook zsh)"
 export PATH=$HOME/.tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
 # ~/.config/tmux/plugins
 export PATH=$HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
+
+alias br="git rev-parse --abbrev-ref HEAD | wl-copy"
+
+export TERM=xterm-256color

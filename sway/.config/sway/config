@@ -236,7 +236,7 @@ exec /usr/share/sway/scripts/inactive-windows-transparency.py --opacity 0.85
 exec blueman-applet
 exec swaync
 exec udiskie --appindicator -t
-exec nm-applet --indicator
+exec iwgtk -i
 #exec opensnitch-ui
 
 # Allow switching between workspaces with left and right swipes
@@ -263,6 +263,10 @@ for_window [class="Maltego"] floating enable
 for_window [instance="Devtools" class="firefox"] floating enable
 for_window [app_id="thunar"] floating enable
 for_window [app_id="gnome-power-statistics"] floating enable
+for_window [app_id="org.twosheds.iwgtk"] floating enable
+for_window [app_id="iwgtk"] floating enable
+
+for_window [class="firefox" instance="Toolkit"] sticky toggle
 
 
 include /etc/sway/config.d/*
