@@ -1,4 +1,4 @@
-# If you come from bash you might have to change your $PATH.
+#Y If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -69,7 +69,7 @@ ZSH_THEME="watertowndev"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf git-truncate kube-ps1 aws)
+plugins=(git fzf git-truncate kube-ps1 aws kubectl dnote terraform)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -101,21 +101,33 @@ PROMPT=$PROMPT'$(kube_ps1) '
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-. "$HOME/.asdf/asdf.sh"
+source $HOME/.asdf/asdf.sh
 
 export PATH="$PATH:$HOME/.local/bin"
-export PATH="$PATH:$HOME/go/bin"
 export EDITOR="vim"
+export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
+export GOPATH=$(go env GOPATH)
 
 alias ll="ls -lah"
+alias ko="kubeon"
 
 eval "$(direnv hook zsh)"
 
-# ~/.tmux/plugins
 export PATH=$HOME/.tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
-# ~/.config/tmux/plugins
 export PATH=$HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
 
 alias br="git rev-parse --abbrev-ref HEAD | wl-copy"
 
 export TERM=xterm-256color
+
+terraform-resources () {
+  sed 's/\x1b\[[0-9;]*m//g' | grep -o '# [^( ]* ' | grep '\.' | sed " s/^# /'/; s/ $/'/; "
+}
+
+terraform-targets () {
+  sed 's/\x1b\[[0-9;]*m//g' | grep -o '# [^( ]* ' | grep '\.' | sed " s/^# /-target '/; s/ $/'/; "
+}
+
+alias myip='curl ip.level.in' # Public facing IP Address
+alias open='sudo lsof -i -P' # Display open sockets
+alias ip='ip --color=auto' # always have color

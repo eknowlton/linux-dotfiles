@@ -13,14 +13,36 @@ set $right l
 set $term alacritty
 set $menu dmenu_path | dmenu | xargs swaymsg exec -- 
 set $grid nwggrid
-set $browser vimb
-### Output configuration
+set $browser qutebrowser
+set $calculator gnome-calculator
 
 set $wallpapers_path $HOME/Pictures/Wallpapers
 output * bg `find $wallpapers_path -type f | shuf -n 1` fill
 
-default_border none
+default_border normal
 default_floating_border normal
+
+set $cl_high #009ddc
+set $cl_indi #d9d8d8
+set $cl_back #231f20
+set $cl_fore #d9d8d8
+set $cl_urge #ee2e24
+
+# Colors                border   bg       text     indi     childborder
+client.focused          $cl_high $cl_high $cl_back $cl_indi $cl_high
+client.focused_inactive $cl_back $cl_back $cl_fore $cl_back $cl_back
+client.unfocused        $cl_back $cl_back $cl_fore $cl_back $cl_back
+client.urgent           $cl_urge $cl_urge $cl_fore $cl_urge $cl_urge
+
+# Window borders
+default_border pixel 1
+default_floating_border normal
+hide_edge_borders smart
+
+smart_gaps on
+gaps inner 0
+
+# Autostart
 
 #
 # Example configuration:
@@ -68,6 +90,7 @@ exec swayidle -w \
 
     # Start your launcher
     bindsym $mod+d exec $menu
+    bindsym $mod+shift+equal exec $calculator
     bindsym $mod+space exec $grid
 
     # Drag floating windows by holding down $mod and left mouse button.
@@ -155,7 +178,7 @@ exec swayidle -w \
     bindsym $mod+Shift+space floating toggle
 
     # Swap focus between the tiling area and the floating #area
-    # bindsym $mod+space focus mode_toggle
+    bindsym ctrl+shift+space focus mode_toggle
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
@@ -201,7 +224,8 @@ bindsym $mod+Control+Shift+$right move workspace to output right
 bindsym $mod+Control+Shift+$left move workspace to output left
 
 # 1password
-bindsym Control+Shift+x exec 1password
+bindsym $mod+Control+Shift+x exec 1password
+bindsym $mod+x exec 1password --quick-access
 
 # capture area and send it to clipboard
 bindsym Print exec grim -g "$(slurp)" - | wl-copy    
@@ -222,6 +246,7 @@ bindsym --locked XF86MonBrightnessUp exec brightnessctl s +3%
 bindsym --locked XF86MonBrightnessDown exec brightnessctl s 3%-
 
 bindsym $mod+u exec $browser duckduckgo.com
+bindsym $mod+m exec $browser https://messages.android.com
 bindsym $mod+shift+u exec $browser google.com
 
 #
@@ -237,7 +262,7 @@ exec blueman-applet
 exec swaync
 exec udiskie --appindicator -t
 exec iwgtk -i
-#exec opensnitch-ui
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Allow switching between workspaces with left and right swipes
 bindgesture swipe:right workspace prev
@@ -258,13 +283,16 @@ for_window [app_id="Thunar"] floating enable
 for_window [app_id="wdisplays"] floating enable
 for_window [app_id="udiskie"] floating enable
 for_window [app_id="opensnitch_ui"] floating enable
-for_window [app_id="org.inkscape.Inkscape"] floating enable
-for_window [class="Maltego"] floating enable
 for_window [instance="Devtools" class="firefox"] floating enable
 for_window [app_id="thunar"] floating enable
 for_window [app_id="gnome-power-statistics"] floating enable
 for_window [app_id="org.twosheds.iwgtk"] floating enable
 for_window [app_id="iwgtk"] floating enable
+for_window [instance="pritunl"] floating enable
+for_window [app_id="org.gnome.Nautilus"] floating enable
+for_window [app_id="org.gnome.Calculator"] floating enable
+for_window [app_id="polkit-gnome-authentication-agent-1"] floating enable 
+for_window [app_id="org.remmina.Remmina"] floating enable
 
 for_window [class="firefox" instance="Toolkit"] sticky toggle
 

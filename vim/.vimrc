@@ -2,7 +2,6 @@ call plug#begin()
 
 Plug 'tpope/vim-sensible'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 Plug 'francoiscabrol/ranger.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -26,6 +25,9 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'honza/vim-snippets'
 Plug 'mlaursen/vim-react-snippets'
+Plug 'diepm/vim-rest-console'
+Plug 'preservim/nerdcommenter'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 call plug#end()
 
@@ -59,11 +61,13 @@ autocmd FileType sh setlocal ts=2 sts=2 sw=2
 autocmd FileType c setlocal ts=4 sts=4 sw=4
 autocmd FileType typescript setlocal ts=2 sts=2 sw=2
 autocmd FileType typescript.tsx setlocal ts=2 sts=2 sw=2
+autocmd FileType typescriptreact setlocal ts=2 sts=2 sw=2
 autocmd FileType ruby setlocal ts=2 sts=2 sw=2
 autocmd FileType php setlocal ts=4 sts=4 sw=4
 autocmd FileType ccpp setlocal ts=4 sts=4 sw=4
 autocmd FileType xml setlocal ts=2 sts=2 sw=2
 autocmd FileType css setlocal ts=2 sts=2 sw=2
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 cursorcolumn
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
 autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
@@ -85,6 +89,9 @@ let g:which_key_map = {}
 let g:ranger_map_keys = 0 " Ranger auto maps this to <leader>f
 
 let g:which_key_map.r = ['Ranger', 'Ranger File Browser']
+
+set foldmethod=syntax
+set foldlevel=3
 
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
@@ -128,10 +135,23 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 let g:coc_global_extensions =
   \[
   \  '@yaegassy/coc-intelephense',
+  \  '@yaegassy/coc-tailwindcss3',
+  \  'coc-deno',
+  \  'coc-docker',
   \  'coc-flutter',
   \  'coc-go',
+  \  'coc-highlight',
+  \  'coc-html',
+  \  'coc-jedi',
+  \  'coc-json',
+  \  'coc-markdownlint',
   \  'coc-prettier',
-  \  'coc-tsserver'
+  \  'coc-rust-analyzer',
+  \  'coc-snippets',
+  \  'coc-solargraph',
+  \  'coc-tsserver',
+  \  'coc-xml',
+  \  'coc-yaml'
   \]
 
 "----- Buffers
@@ -214,7 +234,6 @@ nmap <silent>gi <Plug>(coc-implementation)
 nmap <silent>gr <Plug>(coc-references)
 
 " Formatting selected code
-xmap <silent>cf <Plug>(coc-format-selected)
 nmap <silent>cfs <Plug>(coc-format-selected)
 
 " Symbol renaming
