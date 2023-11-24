@@ -16,6 +16,7 @@ Plug 'KabbAmine/vCoolor.vim'
 Plug 'janko-m/vim-test'
 Plug 'LnL7/vim-nix'
 Plug 'tpope/vim-fugitive'
+Plug 'rbong/vim-flog'
 Plug 'jparise/vim-graphql'
 Plug 'pearofducks/ansible-vim'
 Plug 'tpope/vim-rhubarb'
@@ -268,6 +269,7 @@ xnoremap <silent> <C-@> :w !wl-copy<CR><CR>
 nnoremap <C-@> :call system("wl-copy", @")<CR>
 
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
 let test#strategy = "shtuff"
 let g:shtuff_receiver = 'devrunner'
