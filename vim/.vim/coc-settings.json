@@ -18,8 +18,18 @@
       "command": "terraform-ls",
       "args": ["serve"],
       "filetypes": ["terraform", "tf"],
-      "initializationOptions": {},
+      "trace.server": "verbose",
+      "initializationOptions": {
+        "experimentalFeatures": {
+          "prefillRequiredFields": true
+        }
+      },
       "settings": {}
+    },
+    "nixd": {
+      "command": "nixd",
+      "rootPatterns": [".nixd.json"],
+      "filetypes": ["nix"]
     }
   },
 

@@ -1,5 +1,4 @@
 call plug#begin()
-
 Plug 'tpope/vim-sensible'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'francoiscabrol/ranger.vim'
@@ -10,7 +9,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'liuchengxu/vim-which-key'
 Plug 'ruanyl/vim-gh-line'
 Plug 'hashivim/vim-terraform'
-Plug 'jasonccox/vim-wayland-clipboard'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'gko/vim-coloresque'
@@ -35,6 +33,7 @@ set exrc
 set secure
 
 colorscheme monokai
+set lazyredraw
 
 set encoding=UTF-8
 set mouse=a
@@ -258,7 +257,17 @@ nmap <leader>cac  <Plug>(coc-fix-current)
 " Run the Code Lens action on the current line
 nmap <leader>cl <Plug>(coc-codelens-action)
 
+nmap wn :new<CR>
+
+" Tabs
+nmap lt :tablast<CR>
+nmap tn :tabnew<CR>
+nmap td :tabclose<CR>
+
 xnoremap <silent> <C-@> :w !wl-copy<CR><CR>
+nnoremap <C-@> :call system("wl-copy", @")<CR>
+
+let g:airline#extensions#tabline#enabled = 1
 
 let test#strategy = "shtuff"
 let g:shtuff_receiver = 'devrunner'
