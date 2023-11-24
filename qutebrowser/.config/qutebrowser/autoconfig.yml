@@ -18,15 +18,30 @@ settings:
   bindings.commands:
     global:
       normal:
-        xd: download-open ;; download-clear
+        jk: clear-keychain
+  colors.contextmenu.disabled.bg:
+    global: '#353535'
+  colors.contextmenu.disabled.fg:
+    global: '#808080'
+  colors.contextmenu.menu.bg:
+    global: null
+  colors.contextmenu.menu.fg:
+    global: null
   colors.webpage.darkmode.enabled:
     global: false
+  completion.cmd_history_max_items:
+    global: 5
+  completion.web_history.max_items:
+    global: 5
   content.blocking.enabled:
     global: false
   content.blocking.whitelist:
     global: []
   content.desktop_capture:
     https://meet.google.com: true
+  content.headers.user_agent:
+    global: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like
+      Gecko) Chrome/117.0.0.0 Safari/537.36
   content.media.audio_capture:
     https://meet.google.com: true
     https://voice.google.com: true

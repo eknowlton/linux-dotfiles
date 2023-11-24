@@ -1,3 +1,6 @@
 waybar/.config/waybar/weatherbar/
 *.old
 mitmproxy/.mitmproxy/addons/
+sway/.config/sway/outputs
+qutebrowser/.config/qutebrowser/bookmarks/urls
+qutebrowser/.config/qutebrowser/qsettings/QtProject.conf
