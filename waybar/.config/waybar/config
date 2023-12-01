@@ -137,7 +137,9 @@
     "device": "intel_backlight",
     "format": " {percent}%",
     "on-scroll-up": "brightnessctl s 25+",
-    "on-scroll-down": "brightnessctl s 25-"
+    "on-scroll-down": "brightnessctl s 25-",
+    "on-click": "brightnessctl s 0",
+    "on-click-right": "brightnessctl s 100+"
   },
   "temperature": {
     "thermal-zone": 2,

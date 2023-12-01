@@ -27,6 +27,7 @@ Plug 'mlaursen/vim-react-snippets'
 Plug 'diepm/vim-rest-console'
 Plug 'preservim/nerdcommenter'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'wellle/context.vim'
 
 call plug#end()
 
@@ -87,6 +88,7 @@ let maplocalleader = ","
 let g:which_key_map = {}
 
 let g:ranger_map_keys = 0 " Ranger auto maps this to <leader>f
+let g:ranger_open_new_tab = 1
 
 let g:which_key_map.r = ['Ranger', 'Ranger File Browser']
 
@@ -247,7 +249,6 @@ augroup mygroup
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
-
 " Remap keys for applying code actions at the cursor position
 nmap <leader>ca  <Plug>(coc-codeaction-cursor)
 " Remap keys for apply code actions affect whole buffer
@@ -257,13 +258,6 @@ nmap <leader>cac  <Plug>(coc-fix-current)
 
 " Run the Code Lens action on the current line
 nmap <leader>cl <Plug>(coc-codelens-action)
-
-nmap wn :new<CR>
-
-" Tabs
-nmap lt :tablast<CR>
-nmap tn :tabnew<CR>
-nmap td :tabclose<CR>
 
 xnoremap <silent> <C-@> :w !wl-copy<CR><CR>
 nnoremap <C-@> :call system("wl-copy", @")<CR>

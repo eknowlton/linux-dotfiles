@@ -38,7 +38,7 @@
   "solargraph.formatting": true,
   "solargraph.hover": true,
 
-  "[javascript][typescript][javascriptreact][typescriptreact][php][json][jsonc][terraform][yaml]": {
+  "[javascript][typescript][javascriptreact][typescriptreact][php][json][jsonc][terraform]": {
     "coc.preferences.formatOnSave": true
   },
 
