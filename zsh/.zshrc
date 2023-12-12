@@ -105,7 +105,7 @@ source $HOME/.asdf/asdf.sh
 
 export PATH="$PATH:$HOME/.local/bin"
 export EDITOR="vim"
-export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
+export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$(go env GOPATH)
 
 alias ll="ls -lah"

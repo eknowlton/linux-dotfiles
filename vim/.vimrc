@@ -156,11 +156,6 @@ let g:coc_global_extensions =
   \  'coc-yaml'
   \]
 
-"----- Buffers
-let g:which_key_map.b = { 'name' : 'Buffers',
-               \ 'n' : ['BufferNext', 'Next Buffer'],
-               \ 'p' : ['BufferPrevious', 'Previous Buffer'],
-               \ }
 
 let g:which_key_map.r = ['Ranger', 'Ranger File Browser']
 
@@ -170,8 +165,11 @@ let g:which_key_map.f = { 'name' : 'Files',
                \ 'G' : ['GFiles?', 'Find GIT Files FZF with Changes'],
                \ }
 
+"----- Buffers
 let g:which_key_map.b = { 'name' : 'Buffer',
                \ 'd' : ['bd', 'Close buffer'],
+               \ 'n' : ['bnext', 'Next buffer'],
+               \ 'p' : ['bprev', 'Previous buffer'],
                \ }
 
 "----- Fugitive ( Git ) 
@@ -267,3 +265,5 @@ let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
 let test#strategy = "shtuff"
 let g:shtuff_receiver = 'devrunner'
+
+source ~/.vim/large-file.vim
