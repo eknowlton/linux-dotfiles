@@ -28,6 +28,9 @@ Plug 'diepm/vim-rest-console'
 Plug 'preservim/nerdcommenter'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'wellle/context.vim'
+Plug 'nvie/vim-flake8'
+Plug 'psliwka/vim-smoothie'
+Plug 'mechatroner/rainbow_csv'
 
 call plug#end()
 
@@ -53,6 +56,7 @@ set smartindent
 set nocompatible
 set splitbelow
 set splitright
+set hlsearch
 
 autocmd FileType crontab setlocal nobackup nowritebackup
 autocmd FileType javascript setlocal ts=2 sts=2 sw=2
@@ -161,22 +165,31 @@ let g:which_key_map.r = ['Ranger', 'Ranger File Browser']
 
 let g:which_key_map.f = { 'name' : 'Files',
                \ 'f' : ['Files', 'Find Files FZF'],
+               \ 'b' : ['Buffers', 'Find Buffers FZF'],
                \ 'g' : ['GFiles', 'Find GIT Files FZF'],
                \ 'G' : ['GFiles?', 'Find GIT Files FZF with Changes'],
                \ }
+
+let g:fzf_action = { 'enter': 'tab split' }
+
+nnoremap <left> gT
+nnoremap <up> gT
+nnoremap <right> gt
+nnoremap <down> gt
 
 "----- Buffers
 let g:which_key_map.b = { 'name' : 'Buffer',
                \ 'd' : ['bd', 'Close buffer'],
                \ 'n' : ['bnext', 'Next buffer'],
                \ 'p' : ['bprev', 'Previous buffer'],
+               \ 'J' : ['%!jq .', 'Format Json']
                \ }
 
 "----- Fugitive ( Git ) 
 let g:which_key_map.g = { 'name' : 'Fugitive',
                \ 'g' : ['Git', 'Call a git command'],
                \ 'b' : ['Git blame', 'Blame'],
-               \ 'd' : ['Git diff', 'Git Diff'],
+               \ 'd' : ['Gdiffsplit', 'GIT Diff'],
                \ 'l' : ['Git log', 'Git log'],
                \ 'm' : ['Git mergetool', 'Git mergetool'],
                \ 'D' : ['Git difftool', 'Git difftool'],
@@ -265,5 +278,6 @@ let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
 let test#strategy = "shtuff"
 let g:shtuff_receiver = 'devrunner'
+let test#python#runner = 'djangotest'
 
 source ~/.vim/large-file.vim

@@ -17,6 +17,8 @@ settings:
       wqa: quit --save
   bindings.commands:
     global:
+      insert:
+        jk: mode-enter normal
       normal:
         jk: clear-keychain
   colors.contextmenu.disabled.bg:
@@ -50,9 +52,14 @@ settings:
   content.media.video_capture:
     https://meet.google.com: true
   content.notifications.enabled:
+    https://calendar.google.com: true
     https://meet.google.com: true
     https://messages.google.com: true
     https://voice.google.com: true
+  content.register_protocol_handler:
+    https://calendar.google.com?cid=%25s: true
+  content.tls.certificate_errors:
+    global: ask
   fonts.tabs.selected:
     global: 12pt default_family
   fonts.tabs.unselected:
@@ -64,3 +71,5 @@ settings:
     global: always
   tabs.show:
     global: multiple
+  zoom.default:
+    global: '100'

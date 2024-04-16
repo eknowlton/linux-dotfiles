@@ -131,3 +131,7 @@ terraform-targets () {
 alias myip='curl ip.level.in' # Public facing IP Address
 alias open='sudo lsof -i -P' # Display open sockets
 alias ip='ip --color=auto' # always have color
+alias ssh="ssh -t"
+
+export WINEPREFIX=~/.wine
+. "$HOME/.cargo/env"

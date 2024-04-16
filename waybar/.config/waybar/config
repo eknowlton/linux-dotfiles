@@ -12,6 +12,7 @@
     "custom/right-arrow-dark"
   ],
   "modules-right": [
+    "sway/mode",
     "custom/notification",
     "custom/left-arrow-dark",
     "temperature",
@@ -25,7 +26,6 @@
     "custom/left-arrow-dark",
     "tray"
   ],
-
   "custom/left-arrow-dark": {
     "format": "",
     "tooltip": false
@@ -42,32 +42,29 @@
     "format": "",
     "tooltip": false
   },
-
   "sway/workspaces": {
     "disable-scroll": true,
     "format": "{name}"
   },
-
   "clock": {
     "format": "  {:%I:%M %p}",
     "format-alt": " {:%A, %B %d, %Y (%R)}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
-      "mode"          : "year",
-      "mode-mon-col"  : 3,
-      "weeks-pos"     : "right",
-      "on-scroll"     : 1,
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
       "on-click-right": "mode",
       "format": {
-        "months":     "<span color='#ffead3'><b>{}</b></span>",
-        "days":       "<span color='#ecc6d9'><b>{}</b></span>",
-        "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
-        "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
-        "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
       }
     }
   },
-
   "pulseaudio": {
     "format": "{icon} {volume:2}%",
     "format-bluetooth": " {icon}  {volume}%",
@@ -117,6 +114,10 @@
     "icon-size": 14,
     "spacing": 8
   },
+  "sway/mode": {
+    "format": " {}",
+    "max-length": 50
+  },
   "custom/notification": {
     "tooltip": false,
     "format": "{icon}",
@@ -139,7 +140,8 @@
     "on-scroll-up": "brightnessctl s 25+",
     "on-scroll-down": "brightnessctl s 25-",
     "on-click": "brightnessctl s 0",
-    "on-click-right": "brightnessctl s 100+"
+    "on-click-right": "brightnessctl s 100+",
+    "on-click-middle": "brightnessctl s 50+"
   },
   "temperature": {
     "thermal-zone": 2,

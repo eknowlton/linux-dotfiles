@@ -20,6 +20,10 @@ window#waybar {
   font-size: 22px;
 }
 
+#window {
+  padding: 0 20px;
+}
+
 #workspaces,
 #clock,
 #pulseaudio,
