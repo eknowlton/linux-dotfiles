@@ -64,6 +64,8 @@ settings:
     global: 12pt default_family
   fonts.tabs.unselected:
     global: 12pt default_family
+  qt.highdpi:
+    global: true
   spellcheck.languages:
     global:
     - en-US
