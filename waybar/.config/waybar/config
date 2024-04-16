@@ -2,9 +2,10 @@
   "layer": "bottom",
   "position": "top",
   "modules-left": [
-    "sway/workspaces",
-    "custom/scratchpad-indicator",
-    "custom/right-arrow-dark"
+    "hyprland/workspaces",
+    "custom/right-arrow-dark",
+    "hyprland/window",
+    "custom/scratchpad-indicator"
   ],
   "modules-center": [
     "custom/left-arrow-dark",
@@ -157,5 +158,10 @@
     "format": " {}",
     "on-click": "swaymsg 'scratchpad show'",
     "on-click-right": "swaymsg 'move scratchpad'"
+  },
+  "hyprland/workspaces": {
+     "format": "{icon}",
+     "on-scroll-up": "hyprctl dispatch workspace e+1",
+     "on-scroll-down": "hyprctl dispatch workspace e-1"
 }
 }
