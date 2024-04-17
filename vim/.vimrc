@@ -31,6 +31,7 @@ Plug 'wellle/context.vim'
 Plug 'nvie/vim-flake8'
 Plug 'psliwka/vim-smoothie'
 Plug 'mechatroner/rainbow_csv'
+Plug 'jasonccox/vim-wayland-clipboard'
 
 call plug#end()
 
@@ -84,7 +85,10 @@ autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 inoremap jk <Esc>
 tnoremap <Esc> <C-\><C-n>
 
-set clipboard=unnamedplus
+set clipboard+=unnamedplus
+
+vnoremap <C-c> "+
+nnoremap <C-c> "+
 
 let mapleader = "\<Space>"
 let maplocalleader = ","

@@ -1,12 +1,12 @@
 [
   {
     "name": "Lock screen",
-    "exec": "swaylock -f -c 000000",
+    "exec": "hyprlock",
     "icon": "system-lock-screen"
   },
   {
     "name": "Logout",
-    "exec": "swaymsg exit",
+    "exec": "hyprctl dispatch exit",
     "icon": "system-log-out"
   },
   {

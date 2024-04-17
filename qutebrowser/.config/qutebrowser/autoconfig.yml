@@ -20,6 +20,7 @@ settings:
       insert:
         jk: mode-enter normal
       normal:
+        <Meta+j>: tab-next
         jk: clear-keychain
   colors.contextmenu.disabled.bg:
     global: '#353535'
@@ -60,6 +61,12 @@ settings:
     https://calendar.google.com?cid=%25s: true
   content.tls.certificate_errors:
     global: ask
+  editor.command:
+    global:
+    - alacritty
+    - -e
+    - vim
+    - '{}'
   fonts.tabs.selected:
     global: 12pt default_family
   fonts.tabs.unselected:

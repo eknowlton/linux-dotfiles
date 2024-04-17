@@ -3,6 +3,7 @@
   "position": "top",
   "modules-left": [
     "hyprland/workspaces",
+    "hyprland/submap",
     "custom/right-arrow-dark",
     "hyprland/window",
     "custom/scratchpad-indicator"
@@ -13,7 +14,6 @@
     "custom/right-arrow-dark"
   ],
   "modules-right": [
-    "sway/mode",
     "custom/notification",
     "custom/left-arrow-dark",
     "temperature",
@@ -43,13 +43,9 @@
     "format": "",
     "tooltip": false
   },
-  "sway/workspaces": {
-    "disable-scroll": true,
-    "format": "{name}"
-  },
   "clock": {
-    "format": "  {:%I:%M %p}",
-    "format-alt": " {:%A, %B %d, %Y (%R)}",
+    "format": " {:%A, %B %d, %Y (%R)}",
+    "format-alt": "  {:%I:%M %p}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
       "mode": "year",
@@ -115,10 +111,6 @@
     "icon-size": 14,
     "spacing": 8
   },
-  "sway/mode": {
-    "format": " {}",
-    "max-length": 50
-  },
   "custom/notification": {
     "tooltip": false,
     "format": "{icon}",
@@ -151,17 +143,14 @@
     "format-critical": " {temperatureC}°C",
     "format": " {temperatureC}°C"
   },
-  "custom/scratchpad-indicator": {
-    "interval": 3,
-    "return-type": "json",
-    "exec": "swaymsg -t get_tree | jq --unbuffered --compact-output '(select(.name == \"root\") | .nodes[] | select(.name == \"__i3\") | .nodes[] | select(.name == \"__i3_scratch\") | .focus) as $scratch_ids | [.. | (.nodes? + .floating_nodes?) // empty | .[] | select(.id|IN($scratch_ids[]))] as $scratch_nodes | { text: \"\\($scratch_nodes|length)\", tooltip: $scratch_nodes|map(.name)|join(\"\\n\") }'",
-    "format": " {}",
-    "on-click": "swaymsg 'scratchpad show'",
-    "on-click-right": "swaymsg 'move scratchpad'"
-  },
   "hyprland/workspaces": {
-     "format": "{icon}",
-     "on-scroll-up": "hyprctl dispatch workspace e+1",
-     "on-scroll-down": "hyprctl dispatch workspace e-1"
-}
+    "format": "{icon}",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1"
+  },
+  "hyprland/submap": {
+    "format": " {}",
+    "max-length": 12,
+    "tooltip": false
+  }
 }

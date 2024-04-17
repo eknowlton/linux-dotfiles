@@ -34,7 +34,8 @@ window#waybar {
 #tray,
 #temperature,
 #backlight,
-#custom-scratchpad-indicator {
+#custom-scratchpad-indicator,
+#submap {
   background: #1a1a1a;
 }
 
@@ -106,6 +107,8 @@ window#waybar {
 #cpu,
 #battery,
 #temperature,
-#disk {
+#disk,
+#submap {
   padding: 0 10px;
 }
+
