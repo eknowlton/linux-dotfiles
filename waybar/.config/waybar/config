@@ -14,7 +14,6 @@
     "custom/right-arrow-dark"
   ],
   "modules-right": [
-    "custom/notification",
     "custom/left-arrow-dark",
     "temperature",
     "backlight",
@@ -23,24 +22,22 @@
     "cpu",
     "battery",
     "disk",
-    "custom/left-arrow-light",
-    "custom/left-arrow-dark",
     "tray"
   ],
   "custom/left-arrow-dark": {
-    "format": "",
+    "format": " ",
     "tooltip": false
   },
   "custom/left-arrow-light": {
-    "format": "",
+    "format": " ",
     "tooltip": false
   },
   "custom/right-arrow-dark": {
-    "format": "",
+    "format": " ",
     "tooltip": false
   },
   "custom/right-arrow-light": {
-    "format": "",
+    "format": " ",
     "tooltip": false
   },
   "clock": {
@@ -110,22 +107,6 @@
   "tray": {
     "icon-size": 14,
     "spacing": 8
-  },
-  "custom/notification": {
-    "tooltip": false,
-    "format": "{icon}",
-    "format-icons": {
-      "notification": "",
-      "none": "",
-      "dnd-notification": "<",
-      "dnd-none": ""
-    },
-    "return-type": "json",
-    "exec-if": "which swaync-client",
-    "exec": "swaync-client -swb",
-    "on-click-right": "swaync-client -t -sw",
-    "on-click": "swaync-client -d -sw",
-    "escape": true
   },
   "backlight": {
     "device": "intel_backlight",

@@ -1,23 +1,35 @@
 * {
   font-size: 14px;
   font-family: "Source Code Pro for Powerline", "Font Awesome 6 Free";
+  font-weight: bold;
 }
 
 window#waybar {
-  background: #292b2e;
+  background: rgba(0, 0, 0, .2);
   color: #fdf6e3;
 }
 
 #custom-right-arrow-dark,
 #custom-left-arrow-dark {
-  color: #1a1a1a;
+  background: #1a1a1a;
   font-size: 22px;
 }
 #custom-right-arrow-light,
 #custom-left-arrow-light {
-  color: #292b2e;
-  background: #1a1a1a;
+  background: #292b2e;
   font-size: 22px;
+}
+
+#custom-right-arrow-light,
+#custom-right-arrow-dark {
+  border-radius: 0 10px 10px 0;
+  margin-left: -4px;
+}
+
+#custom-left-arrow-light,
+#custom-left-arrow-dark {
+  border-radius: 15px 0 0 15px;
+  margin-right: -4px;
 }
 
 #window {
@@ -111,4 +123,3 @@ window#waybar {
 #submap {
   padding: 0 10px;
 }
-
