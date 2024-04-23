@@ -80,5 +80,7 @@ settings:
     global: always
   tabs.show:
     global: multiple
+  tabs.tabs_are_windows:
+    global: false
   zoom.default:
     global: '100'

@@ -1,6 +1,7 @@
 {
   "layer": "bottom",
   "position": "top",
+  "margin-top": 0,
   "modules-left": [
     "hyprland/workspaces",
     "hyprland/submap",
@@ -14,7 +15,8 @@
     "custom/right-arrow-dark"
   ],
   "modules-right": [
-    "custom/left-arrow-dark",
+    "custom/notification",
+    "custom/left-arrow-light",
     "temperature",
     "backlight",
     "pulseaudio",
@@ -41,7 +43,7 @@
     "tooltip": false
   },
   "clock": {
-    "format": " {:%A, %B %d, %Y (%R)}",
+    "format": " {:%A, %B %d, %Y %I:%M %p}",
     "format-alt": "  {:%I:%M %p}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
@@ -133,5 +135,25 @@
     "format": " {}",
     "max-length": 12,
     "tooltip": false
+  },
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
   }
 }

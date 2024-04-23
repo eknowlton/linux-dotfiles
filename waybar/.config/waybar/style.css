@@ -5,50 +5,57 @@
 }
 
 window#waybar {
-  background: rgba(0, 0, 0, .2);
+  background: rgba(0, 0, 0, 0);
   color: #fdf6e3;
+}
+
+window#waybar > .horizontal {
+  margin: 6px 0;
 }
 
 #custom-right-arrow-dark,
 #custom-left-arrow-dark {
-  background: #1a1a1a;
+  background: rgba(35, 35, 35, .8);
   font-size: 22px;
 }
 #custom-right-arrow-light,
 #custom-left-arrow-light {
-  background: #292b2e;
+  color: #000000;
+  background: rgba(132, 33, 80, .8);
   font-size: 22px;
 }
 
 #custom-right-arrow-light,
 #custom-right-arrow-dark {
   border-radius: 0 10px 10px 0;
-  margin-left: -4px;
 }
 
 #custom-left-arrow-light,
 #custom-left-arrow-dark {
   border-radius: 15px 0 0 15px;
-  margin-right: -4px;
 }
 
 #window {
-  padding: 0 20px;
+  margin-left: 20px;
 }
 
-#workspaces,
-#clock,
+#temperature,
+#backlight,
 #pulseaudio,
 #memory,
 #cpu,
 #battery,
-#disk,
+#disk {
+  color: #000000;
+  background: rgba(132, 33, 106, .8);
+}
+
+#workspaces,
+#clock,
 #tray,
-#temperature,
-#backlight,
 #custom-scratchpad-indicator,
 #submap {
-  background: #1a1a1a;
+  background: rgba(35, 35, 35, .8);
 }
 
 #custom-scratchpad-indicator {
@@ -64,7 +71,7 @@ window#waybar {
 }
 
 #custom-notification {
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
 #tray,
@@ -84,8 +91,8 @@ window#waybar {
   text-shadow: inherit;
 }
 #workspaces button:hover {
-  background: #1a1a1a;
-  border: #1a1a1a;
+  background: rgba(35, 35, 35, .8);
+  border: rgba(35, 35, 35, .8);
   padding: 0 3px;
 }
 
@@ -122,4 +129,12 @@ window#waybar {
 #disk,
 #submap {
   padding: 0 10px;
+}
+
+#disk {
+  padding-right: 15px;
+}
+
+#tray {
+  padding-left: 15px;
 }
